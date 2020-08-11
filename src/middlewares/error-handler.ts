@@ -15,7 +15,7 @@ export const errorHandler = (
 	if (err instanceof MongooseError.CastError) {
 		const message = `Resource not found with ID of ${err.value}`;
 
-		res.status(404).send({
+		return res.status(404).send({
 			errors: [{ message }],
 		});
 	}
@@ -24,7 +24,7 @@ export const errorHandler = (
 	if (err instanceof MongoError && err.code === 11000) {
 		const message = 'Duplicate field value entered';
 
-		res.status(400).send({
+		return res.status(400).send({
 			errors: [{ message }],
 		});
 	}
@@ -32,7 +32,7 @@ export const errorHandler = (
 	//Mongoose validation error
 	if (err instanceof MongooseError.ValidationError) {
 		const message = Object.values(err.errors).map((val) => val.message);
-		res.status(400).send({
+		return res.status(400).send({
 			errors: [{ message }],
 		});
 	}
