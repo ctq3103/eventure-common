@@ -9,6 +9,8 @@ export const errorHandler = (
 	res: Response,
 	next: NextFunction
 ) => {
+	console.error(err);
+
 	//Mongoose bad ObjectId
 	if (err instanceof MongooseError.CastError) {
 		const message = `Resource not found with ID of ${err.value}`;
@@ -42,6 +44,4 @@ export const errorHandler = (
 	res.status(400).send({
 		errors: [{ message: 'Something went wrong!' }],
 	});
-
-	console.error(err);
 };
