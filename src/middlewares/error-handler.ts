@@ -1,7 +1,6 @@
 import { Response, Request, NextFunction } from 'express';
 import { CustomError } from '../errors/custom-error';
 import { Error as MongooseError } from 'mongoose';
-import { MongoError } from 'mongodb';
 
 export const errorHandler = (
 	err: Error | MongooseError,
@@ -18,19 +17,6 @@ export const errorHandler = (
 		});
 	}
 
-	//Mongoose duplicate key
-	if (
-		err instanceof MongoError &&
-		err.name === 'MongoError' &&
-		err.code === 11000
-	) {
-		const message = 'Duplicate field value entered';
-
-		return res.status(400).send({
-			errors: [{ message }],
-		});
-	}
-
 	//Mongoose validation error
 	if (err instanceof MongooseError.ValidationError) {
 		const message = Object.values(err.errors).map((val) => val.message);
@@ -43,11 +29,9 @@ export const errorHandler = (
 		return res.status(err.statusCode).send({ errors: err.serializeErrors() });
 	}
 
-	// else {
-	// 	res.status(400).send({
-	// 		errors: [{ message: 'Something went wrong!' }],
-	// 	});
-	// }
+	res.status(400).send({
+		errors: [{ message: 'Something went wrong!' }],
+	});
 
 	console.error(err);
 	next();
