@@ -14,4 +14,6 @@ export * from './NATS-events/base-listener';
 export * from './NATS-events/base-publisher';
 export * from './NATS-events/event-created-event';
 export * from './NATS-events/event-updated-event';
+export * from './NATS-events/organization-created-event';
+export * from './NATS-events/organization-updated-event';
 export * from './NATS-events/subjects';
