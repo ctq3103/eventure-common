@@ -4,10 +4,10 @@ export interface EventCreatedEvent {
 	subject: Subjects.EventCreated;
 	data: {
 		id: string;
-		name: string;
+		title: string;
 		description: string;
 		address: string;
-		date: Date;
+		datetime: Date;
 		price: number;
 		userId: string;
 	};

@@ -5,6 +5,8 @@ export interface OrganizationUpdatedEvent {
 	data: {
 		id: string;
 		name: string;
+		description: string;
+		address: string;
 		userId: string;
 	};
 }
