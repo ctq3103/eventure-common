@@ -5,6 +5,7 @@ export interface EventCreatedEvent {
 	data: {
 		id: string;
 		title: string;
+		address: string;
 		datetime: Date;
 		price: number;
 		userId: string;

@@ -17,3 +17,4 @@ export * from './NATS-events/event-updated-event';
 export * from './NATS-events/organization-created-event';
 export * from './NATS-events/organization-updated-event';
 export * from './NATS-events/subjects';
+export * from './NATS-events/types/order-status';
