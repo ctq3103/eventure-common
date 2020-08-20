@@ -4,5 +4,5 @@ export declare enum Subjects {
 	OrganizationCreated = 'organization:created',
 	OrganizationUpdated = 'organization:updated',
 	OrderCreated = 'order:created',
-	OrderUpdated = 'order:updated',
+	OrderCancelled = 'order:cancelled',
 }

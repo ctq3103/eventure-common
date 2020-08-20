@@ -6,7 +6,7 @@ export interface EventCreatedEvent {
 		id: string;
 		title: string;
 		address: string;
-		datetime: Date;
+		datetime: string;
 		price: number;
 		userId: string;
 	};
