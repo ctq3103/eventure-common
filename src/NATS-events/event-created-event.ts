@@ -9,5 +9,6 @@ export interface EventCreatedEvent {
 		datetime: string;
 		price: number;
 		userId: string;
+		version: number;
 	};
 }

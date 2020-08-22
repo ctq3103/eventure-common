@@ -8,5 +8,6 @@ export interface OrganizationCreatedEvent {
 		description: string;
 		address: string;
 		userId: string;
+		version: number;
 	};
 }

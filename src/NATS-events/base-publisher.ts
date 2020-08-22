@@ -19,6 +19,7 @@ export abstract class Publisher<T extends NatsEvent> {
 				if (err) {
 					return reject(err);
 				}
+				console.log('Event published to subject', this.subject);
 				resolve();
 			});
 		});

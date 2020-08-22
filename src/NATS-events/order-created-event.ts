@@ -9,6 +9,7 @@ export interface OrderCreatedEvent {
 		userId: string;
 		totalPrice: number;
 		expiresAt: string;
+		version: number;
 		event: {
 			id: string;
 			price: number;

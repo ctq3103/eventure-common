@@ -9,5 +9,6 @@ export interface EventUpdatedEvent {
 		datetime: string;
 		price: number;
 		userId: string;
+		version: number;
 	};
 }
