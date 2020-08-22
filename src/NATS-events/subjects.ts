@@ -1,4 +1,4 @@
-export declare enum Subjects {
+export enum Subjects {
 	EventCreated = 'event:created',
 	EventUpdated = 'event:updated',
 	OrganizationCreated = 'organization:created',
