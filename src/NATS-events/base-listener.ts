@@ -10,7 +10,7 @@ export abstract class Listener<T extends NatsEvent> {
 	abstract subject: T['subject']; //name of the channel this Listener is going to listen to
 	abstract queueGroupName: string;
 	abstract onMessage(data: T['data'], msg: Message): void; //run when a message is received
-	private client: Stan; //pre-initialized NATS Client
+	protected client: Stan; //pre-initialized NATS Client
 	protected ackWait = 5 * 1000; //5 seconds - no of seconds this listener has to ack a message
 
 	constructor(client: Stan) {

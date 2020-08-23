@@ -7,7 +7,7 @@ interface NatsEvent {
 }
 export abstract class Publisher<T extends NatsEvent> {
 	abstract subject: T['subject'];
-	private client: Stan;
+	protected client: Stan;
 
 	constructor(client: Stan) {
 		this.client = client;
