@@ -1,4 +1,5 @@
 import { Subjects } from './subjects';
+import { TicketStatus } from './types/ticket-status';
 
 export interface EventUpdatedEvent {
 	subject: Subjects.EventUpdated;
@@ -8,6 +9,7 @@ export interface EventUpdatedEvent {
 		address: string;
 		datetime: string;
 		price: number;
+		status: TicketStatus;
 		userId: string;
 		organizationId: string;
 		version: number;
