@@ -4,6 +4,7 @@ export enum OrderStatus {
 
 	//When user has cancelled the order
 	//The order expires before payment
+	//When event has ended
 	Cancelled = 'cancelled',
 
 	//the order has successfully calculated the total price
