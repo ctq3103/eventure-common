@@ -12,6 +12,10 @@ export interface EventUpdatedEvent {
 		status: TicketStatus;
 		userId: string;
 		organizationId: string;
+		image?: {
+			name: string;
+			data: Buffer;
+		};
 		version: number;
 	};
 }

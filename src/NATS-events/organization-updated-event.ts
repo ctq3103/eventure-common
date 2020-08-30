@@ -8,6 +8,10 @@ export interface OrganizationUpdatedEvent {
 		description: string;
 		address: string;
 		userId: string;
+		image?: {
+			name: string;
+			data: Buffer;
+		};
 		version: number;
 	};
 }
