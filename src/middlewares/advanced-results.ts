@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from 'express';
 declare global {
 	namespace Express {
 		interface Response {
-			advancedResults?: any;
+			advancedResults: {};
 		}
 	}
 }
@@ -81,7 +81,11 @@ export const advancedResults = (
 		};
 	}
 
-	res.advancedResults = results;
+	res.advancedResults = {
+		count: results.length,
+		pagination,
+		data: results,
+	};
 
 	next();
 };
